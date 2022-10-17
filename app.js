@@ -1,11 +1,16 @@
 const express = require("express");
 const app = express();
 
+const middleware = (req,res,next) =>{
+    console.log("This is middleware.");
+    next();
+}
+
 app.get('/',(req,res) => {
     res.send("Hello world from the server.");
 });
 
-app.get('/about',(req,res) => {
+app.get('/about',middleware,(req,res) => {
     res.send("This is about page.");
 });
 
