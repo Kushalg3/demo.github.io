@@ -1,8 +1,11 @@
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const express = require("express");
 const app = express();
 
-const DB = "mongodb+srv://demowebsite:demowebsite@cluster0.c3yj6zi.mongodb.net/?retryWrites=true&w=majority";
+dotenv.config({path:'./config.env'});
+
+const DB = process.env.DATABASE;
 
 mongoose.connect(DB).then(() => {
     console.log("Connection established successfully.");
