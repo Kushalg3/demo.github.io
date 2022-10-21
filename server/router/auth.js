@@ -44,4 +44,23 @@ router.post('/register',async (req,res) => {
     }
 });
 
+router.post('/signin', async (req, res) => {
+    const {email, password} = req.body;
+    if (!email || !password ) {
+        return res.status(400).json({message: "Invalid details."});
+    }
+    
+    try {
+        const userLogin = await User.findOne({email:email});
+        console.log(userLogin);
+        if (userLogin) {
+            return res.status(200).json(userLogin);
+        } else {
+            return res.status(400).json({message:"Login failed."});
+        }
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 module.exports = router;
