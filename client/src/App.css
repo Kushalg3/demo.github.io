@@ -16,19 +16,25 @@
 }
 
 .Container {
-  width: 800px;
-  height: fit-content;
-}
-
-.container-of-form {
-  max-width: 660px;
   height: fit-content;
   position: absolute;
 }
 
-.container-of-signin-form {
+.contact > .Container {
+  width: 800px;
+}
+
+.signup > .Container {
+  max-width: 660px;
+}
+
+.signin > .Container {
   max-width: 620px;
-  height: fit-content;
+}
+
+.box {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 12px 35px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 6px;
 }
 
 #signup-image, #signin-image {
