@@ -26,15 +26,6 @@
   position: absolute;
 }
 
-/* CSS to align item center in the page */
-/* .container-of-form, .container-of-signin-form {
-  margin: auto;
-  top: 50%;
-  position: relative;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-} */
-
 .container-of-signin-form {
   max-width: 620px;
   height: fit-content;
