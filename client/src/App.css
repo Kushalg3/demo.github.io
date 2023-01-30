@@ -10,6 +10,9 @@
 .signup, .signin, .contact {
   width: 100vw;
   height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Container {
@@ -20,6 +23,7 @@
 .container-of-form {
   max-width: 660px;
   height: fit-content;
+  position: absolute;
 }
 
 /* CSS to align item center in the page */

@@ -4,7 +4,7 @@ import signuppic from '../images/signup_image.jpg'
 
 const Signup = () => {
   return (
-    <div className='signup d-flex justify-content-center align-content-center flex-wrap bg-white'>
+    <div className='signup'>
       <div className='container-of-form d-flex bg-light px-5 py-5 bg-body-tertiary rounded shadow'>
         <div className='signup-content row align-items-center'>
           <div className='signup-form col'>

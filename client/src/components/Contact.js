@@ -4,7 +4,7 @@ import phonepic from '../images/phone.png'
 const Contact = () => {
   return (
     <>
-    <div className='contact  d-flex justify-content-center align-content-center flex-wrap bg-white'>
+    <div className='contact'>
       <div className='contact-info'>
         <div className='Container'>
           <div className='row justify-content-between'>
