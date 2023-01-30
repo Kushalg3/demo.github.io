@@ -4,16 +4,16 @@ import signinpic from '../images/signin_image.jpg'
 
 const Login = () => {
   return (
-    <div className='signin bg-white'>
-      <div className='container-of-signin-form bg-light px-4 py-3 bg-body-tertiary rounded shadow'>
-        <div className='signin-content row'>
+    <div className='signin d-flex bg-white justify-content-center align-content-center flex-wrap'>
+      <div className='container-of-signin-form d-flex bg-light px-4 py-4 bg-body-tertiary rounded shadow'>
+        <div className='signin-content row align-items-center'>
           <div className='signin-image col'>
             <figure>
               <img src={signinpic} alt='registration pic' id='signin-image' />
             </figure>
             <NavLink to='/signup'className= 'signin-image-link link-secondary text-decoration-none'>Create an account</NavLink>
           </div>
-          <div className='signin-form col mt-5'>
+          <div className='signin-form col'>
             <h2 className='form-title mb-4'>Sign In</h2>
             <form className='signin-form'>
               <div className='form-group input-group mb-3'>

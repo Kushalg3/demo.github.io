@@ -16,24 +16,33 @@
   height: 500px;
 }
 
-.container-of-form, .container-of-signin-form {
+/* CSS to align item center in the page */
+/* .container-of-form, .container-of-signin-form {
   margin: auto;
   top: 50%;
   position: relative;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
+} */
 
 .container-of-signin-form {
   max-width: 620px;
+  height: fit-content;
 }
 
 #signup-image, #signin-image {
   width: 20vw;
-  height: 24vw;
 }
 
 .signup-image, .signin-image {
   text-align: center;
 }
 
+#signin-image{
+  
+  height: 22vw;
+}
+
+#signup-image {
+  height: 24vw;
+}
