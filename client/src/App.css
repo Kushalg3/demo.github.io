@@ -7,13 +7,19 @@
   pointer-events: none;
 }
 
-.signup, .signin {
-  height: 40vw;
+.signup, .signin, .contact {
+  width: 100vw;
+  height: 85vh;
+}
+
+.Container {
+  width: 800px;
+  height: fit-content;
 }
 
 .container-of-form {
   max-width: 660px;
-  height: 500px;
+  height: fit-content;
 }
 
 /* CSS to align item center in the page */
