@@ -5,7 +5,7 @@ import signuppic from '../images/signup_image.jpg'
 const Signup = () => {
   return (
     <div className='signup'>
-      <div className='container-of-form d-flex bg-light px-5 py-5 bg-body-tertiary rounded shadow'>
+      <div className='container-of-form bg-light px-5 py-5 bg-body-tertiary rounded shadow'>
         <div className='signup-content row align-items-center'>
           <div className='signup-form col'>
             <h2 className='form-title mb-3'>Sign Up</h2>
