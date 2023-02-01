@@ -21,7 +21,8 @@
 }
 
 .contact > .Container {
-  width: 800px;
+  max-width: 1600px;
+  width: 60vw;
 }
 
 .signup > .Container {
