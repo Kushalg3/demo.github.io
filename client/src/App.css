@@ -22,7 +22,7 @@
 
 .contact > .Container {
   max-width: 1600px;
-  width: 60vw;
+  width: 65vw;
 }
 
 .signup > .Container {
@@ -36,6 +36,16 @@
 .box {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 12px 35px 0 rgba(0, 0, 0, 0.14);
   border-radius: 6px;
+}
+
+.contact-info-text {
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+}
+
+.contact-info-title {
+  margin-bottom: 0px;
+  font-size: large;
 }
 
 #signup-image, #signin-image {
