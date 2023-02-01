@@ -10,20 +10,24 @@ import { Route, Routes } from 'react-router-dom'
 const App = () => {
   return (
     <>
-      <Navbar/>
-      <Routes>
-        <Route path="/" element={<Home/>}></Route>
+    <div className='App'>
+      <div className='navigation-bar'>
+        <Navbar/>
+      </div>
+      <div className='content'>
+        <Routes>
+          <Route path="/" element={<Home/>}></Route>
 
-        <Route path="/about" element={<About/>}></Route>
+          <Route path="/about" element={<About/>}></Route>
 
-        <Route path="/contact" element={<Contact/>}></Route>
+          <Route path="/contact" element={<Contact/>}></Route>
 
-        <Route path="/login" element={<Login/>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
 
-        <Route path="/signup" element={<Signup/>}></Route>
-      </Routes>
-
-      
+          <Route path="/signup" element={<Signup/>}></Route>
+        </Routes>
+      </div>
+    </div>
     </>
   );
 }

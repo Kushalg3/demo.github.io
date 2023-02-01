@@ -1,5 +1,20 @@
+* {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.navigation-bar {
+  width: 100vw;
+  height: auto;
+}
+
+.content {
+  width: 100vw;
+  height: 91.5vh;
 }
 
 .App-logo {
@@ -7,12 +22,16 @@
   pointer-events: none;
 }
 
-.signup, .signin, .contact {
-  width: 100vw;
-  height: 85vh;
+.signup, .signin, .contact, .home {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.home {
+  background-image: linear-gradient(to right, #cce6ff 50%,#ffffff 50%);
 }
 
 .Container {
@@ -31,6 +50,10 @@
 
 .signin > .Container {
   max-width: 620px;
+}
+
+.home > .Container {
+  text-align: center;
 }
 
 .box {
