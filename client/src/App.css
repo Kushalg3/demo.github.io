@@ -1,5 +1,5 @@
 * {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .App {
@@ -54,6 +54,12 @@
 
 .home > .Container {
   text-align: center;
+}
+
+.home > .Container > p {
+  color: blue;
+  font-size: larger;
+  font-weight: bold;
 }
 
 .box {
