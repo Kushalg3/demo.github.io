@@ -5,16 +5,8 @@
 .App {
   width: 100vw;
   height: 100vh;
-}
-
-.navigation-bar {
-  width: 100vw;
-  height: auto;
-}
-
-.content {
-  width: 100vw;
-  height: 91.5vh;
+  display: grid;
+  grid-template-rows: auto 91.52%;
 }
 
 .App-logo {
