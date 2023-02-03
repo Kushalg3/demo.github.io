@@ -2,10 +2,13 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
-        <p>WELCOME</p>
-        <h1>This is About me page</h1>
-    </div>
+    <>
+        <div className='about'>
+          <div className='Container box bg-light'>
+            <div className='grid-container'></div>
+          </div>
+        </div>
+    </>
   )
 }
 
