@@ -2,6 +2,12 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+@media only screen and (max-width: 600px) {
+  div.signup-image, div.signin-image {
+    display: none;
+  }
+}
+
 .App {
   width: 100vw;
   height: 100vh;
