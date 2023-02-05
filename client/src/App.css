@@ -26,6 +26,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 
 .home {
@@ -34,7 +35,6 @@
 
 .Container {
   height: fit-content;
-  position: absolute;
 }
 
 .contact > .Container {
