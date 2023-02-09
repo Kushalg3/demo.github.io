@@ -5,7 +5,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom';
+import ErrorPage from './components/ErrorPage'
 
 const App = () => {
   return (
@@ -25,6 +26,8 @@ const App = () => {
           <Route path="/login" element={<Login/>}></Route>
 
           <Route path="/signup" element={<Signup/>}></Route>
+
+          <Route path='*' element={<ErrorPage/>}></Route>
         </Routes>
       </div>
     </div>
