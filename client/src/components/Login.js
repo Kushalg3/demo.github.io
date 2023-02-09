@@ -4,8 +4,8 @@ import signinpic from '../images/signin_image.jpg'
 
 const Login = () => {
   return (
-    <div className='signin'>
-      <div className='Container box bg-light px-4 py-4'>
+    <div className='signin bg-light'>
+      <div className='Container box bg-white px-4 py-4'>
         <div className='signin-content row align-items-center'>
           <div className='signin-image col'>
             <figure>

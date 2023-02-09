@@ -4,30 +4,37 @@ import profilepic from '../images/profile-icon.svg';
 const About = () => {
   return (
     <>
-       <div className='about'>
-          <div className='Container box bg-light'>
+       <div className='about bg-light'>
+          <div className='Container box bg-white'>
             <div className='grid-container'>
               <div className='grid-item profile-img'>
                 <figure>
                   <img src={profilepic} alt='profile' id='profile-img' />
                 </figure>
               </div>
-              <div className='grid-item'>
-                <h5>Kushal Ghosh</h5>
-                <h6>Software Engineer</h6>
-                <p>Profile Ranking: <span>7/10</span> </p>
-                <ul className="nav nav-tabs">
-                  <li className="nav-item">
-                    <a className="nav-link active" data-bs-toggle='tab' href="#home">About</a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" data-bs-toggle='tab' href="#profile">Timeline</a>
-                  </li>
-                </ul>
+              <div className='grid-item profile-btn-tabs'>
+                <div className='grid-container-3'>
+                  <div className='grid-item'>
+                    <h5>Kushal Ghosh</h5>
+                    <h6>Software Engineer</h6>
+                    <p>Profile Ranking: <span>7/10</span> </p>
+                  </div>
+                  <div className='grid-item edit-btn'>
+                    <input type='button' value='Edit Profile' id='profile-edit-btn' name='btn' />
+                  </div>
+                  <div className='grid-item toggle-tabs'>
+                    <ul className="nav nav-tabs">
+                      <li className="nav-item">
+                        <a className="nav-link active" data-bs-toggle='tab' href="#home">About</a>
+                      </li>
+                      <li className="nav-item">
+                        <a className="nav-link" data-bs-toggle='tab' href="#profile">Timeline</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div className='grid-item edit-btn'>
-                <input type='button' value='Edit Profile' id='profile-edit-btn' name='btn' />
-              </div>
+              
               <div className='grid-item profile-work-link'>
                 <div className='work-link'>
                   <p>WORK LINK</p>

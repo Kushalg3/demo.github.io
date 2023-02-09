@@ -6,11 +6,11 @@ import locationpic from '../images/location.png'
 const Contact = () => {
   return (
     <>
-    <div className='contact'>
+    <div className='contact bg-light'>
       <div className='Container'>
         <div className='contact-info'>
           <div className='row justify-content-between'>
-            <div className='col-3 box px-2 py-3 bg-light row align-items-center'>
+            <div className='col-3 box px-2 py-3 bg-white row align-items-center'>
               <div className='col-sm-3'>
                 <img src={phonepic} id='phone-img' className='me-1' alt='phone_image'/>
               </div>
@@ -19,7 +19,7 @@ const Contact = () => {
                 <p className='contact-info-text'>+916291294558</p>
               </div>
             </div>
-            <div className='col-3 box px-2 py-3 bg-light row align-items-center'>
+            <div className='col-3 box px-2 py-3 bg-white row align-items-center'>
               <div className='col-sm-3'>
                 <img src={emailpic} id='phone-img' className='me-1' alt='phone_image'/>
               </div>
@@ -28,7 +28,7 @@ const Contact = () => {
                 <p className='contact-info-text'>kushalghoshk@gmail.com</p>
               </div>
             </div>
-            <div className='col-3 box px-2 py-3 bg-light row align-items-center'>
+            <div className='col-3 box px-2 py-3 bg-white row align-items-center'>
               <div className='col-sm-3'>
                 <img src={locationpic} id='phone-img' className='me-1' alt='phone_image'/>
               </div>
@@ -40,7 +40,7 @@ const Contact = () => {
           </div>
         </div>
         <div className='contact-form-container'>
-          <div className='contact-form box bg-light'>
+          <div className='contact-form box bg-white'>
             <div className='container px-5 pt-3 pb-5'>
               <div className='contact-form-title mb-4'>
                 <h1>Get In Touch</h1>
