@@ -123,7 +123,7 @@ const About = () => {
                       </div>
 
                       <div className='grid-item'>  
-                        <label>English Proficiency</label>
+                        <label>English Level</label>
                       </div>
                       <div className='grid-item'>
                         <p>Native</p>
