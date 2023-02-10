@@ -1,8 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import signuppic from '../images/signup_image.jpg'
 
 const Signup = () => {
+
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    work: '',
+    password: '',
+    cpassword: '',
+  })
+
+  let name, value;
+
+  const handleInputs = (e) => {
+    console.log(e);
+    name = e.target.name;
+    value = e.target.value;
+
+    setUser ({...user, [name]:value})
+  }
+
   return (
     <div className='signup bg-light'>
       <div className='Container box bg-white px-5 py-5'>
@@ -12,27 +32,27 @@ const Signup = () => {
             <form className='registration-form'>
               <div className='form-group input-group mb-3'>
                 <label htmlFor='name' className='input-group-text'><i class="zmdi zmdi-account"></i></label>
-                <input type='text' name='name' id='name' autoComplete='off' placeholder='Your name' className='form-control'/>
+                <input type='text' name='name' id='name' autoComplete='off' value={user.name} onChange={handleInputs} placeholder='Your name' className='form-control'/>
               </div>
               <div className='form-group input-group mb-3'>
                 <label htmlFor='email' className='input-group-text'><i class="zmdi zmdi-email"></i></label>
-                <input type='email' name='email' id='email' autoComplete='off' placeholder='Your email' className='form-control'/>
+                <input type='email' name='email' id='email' autoComplete='off' value={user.email} onChange={handleInputs} placeholder='Your email' className='form-control'/>
               </div>
               <div className='form-group input-group mb-3'>
                 <label htmlFor='phone' className='input-group-text'><i class="zmdi zmdi-phone"></i></label>
-                <input type='tel' name='phone' id='phone' autoComplete='off' placeholder='Your phone' className='form-control'/>
+                <input type='tel' name='phone' id='phone' autoComplete='off' value={user.phone} onChange={handleInputs} placeholder='Your phone' className='form-control'/>
               </div>
               <div className='form-group input-group mb-3'>
                 <label htmlFor='work' className='input-group-text'><i class="zmdi zmdi-slideshow"></i></label>
-                <input type='text' name='work' id='work' autoComplete='off' placeholder='Your profession' className='form-control'/>
+                <input type='text' name='work' id='work' autoComplete='off' value={user.work} onChange={handleInputs} placeholder='Your profession' className='form-control'/>
               </div>
               <div className='form-group input-group mb-3'>
                 <label htmlFor='password' className='input-group-text'><i class="zmdi zmdi-key"></i></label>
-                <input type='password' name='password' id='password' autoComplete='off' placeholder='Your password' className='form-control'/>
+                <input type='password' name='password' id='password' autoComplete='off' value={user.password} onChange={handleInputs} placeholder='Your password' className='form-control'/>
               </div>
               <div className='form-group input-group mb-3'>
                 <label htmlFor='cpassword' className='input-group-text'><i class="zmdi zmdi-key"></i></label>
-                <input type='password' name='cpassword' id='cpassword' autoComplete='off' placeholder='Confirm password' className='form-control'/>
+                <input type='password' name='cpassword' id='cpassword' autoComplete='off' value={user.cpassword} onChange={handleInputs} placeholder='Confirm password' className='form-control'/>
               </div>
               <div className='form-group form-button'>
                 <input type='submit' name='signup' id='signup-button' className='form-button btn btn-warning mt-2' value='Sign Up'/>
