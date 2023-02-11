@@ -38,11 +38,11 @@ router.post('/register',async (req,res) => {
         if (userExist) {
             return res.status(422).json({error: "User already exist."});
         } else if (password != cpassword) {
-            return res.status(400).json({message:"Make sure password and cpassord both are same."});
+            return res.status(422).json({message:"Make sure password and cpassord both are same."});
         } else {
             const user = new User({name, email, phone, work, password, cpassword});
             await user.save();
-            res.status(201).json({message:"Registration successful."});
+            res.status(422).json({message:"Registration successful."});
         }
         
     } catch (error) {

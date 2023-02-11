@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import signuppic from '../images/signup_image.jpg'
 
 const Signup = () => {
@@ -15,12 +15,39 @@ const Signup = () => {
 
   let name, value;
 
+  const navigate = useNavigate();
+
   const handleInputs = (e) => {
-    console.log(e);
     name = e.target.name;
     value = e.target.value;
 
     setUser ({...user, [name]:value})
+  }
+
+  const postData = async (e) => {
+    e.preventDefault();
+
+    const {name, email, phone, work, password, cpassword} = user;
+
+    const res = await fetch('/register', {
+      method: "POST",
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify({name, email, phone, work, password, cpassword})
+    });
+
+    const data = await res.json();
+
+    if (data.status === 422 || !data) {
+      window.alert('Invalid Registration');
+      console.log('Invalid Registration');
+    } else {
+      window.alert('Registration Successful.');
+      console.log('Registration Successful');
+
+      navigate('/login');
+    }
   }
 
   return (
@@ -29,7 +56,7 @@ const Signup = () => {
         <div className='signup-content row align-items-center'>
           <div className='signup-form col'>
             <h2 className='form-title mb-3'>Sign Up</h2>
-            <form className='registration-form'>
+            <form className='registration-form' method='POST'>
               <div className='form-group input-group mb-3'>
                 <label htmlFor='name' className='input-group-text'><i class="zmdi zmdi-account"></i></label>
                 <input type='text' name='name' id='name' autoComplete='off' value={user.name} onChange={handleInputs} placeholder='Your name' className='form-control'/>
@@ -55,7 +82,7 @@ const Signup = () => {
                 <input type='password' name='cpassword' id='cpassword' autoComplete='off' value={user.cpassword} onChange={handleInputs} placeholder='Confirm password' className='form-control'/>
               </div>
               <div className='form-group form-button'>
-                <input type='submit' name='signup' id='signup-button' className='form-button btn btn-warning mt-2' value='Sign Up'/>
+                <input type='submit' name='signup' id='signup-button' className='form-button btn btn-warning mt-2' value='Sign Up' onClick={postData}/>
               </div>
             </form>
           </div>
