@@ -1,7 +1,44 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import profilepic from '../images/profile-icon.svg';
+import {useNavigate} from 'react-router-dom'
 
 const About = () => {
+
+  const navigate = useNavigate();
+
+  const [userData, setUserData] = useState({});
+
+  useEffect(() => {
+    callAboutPage();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  
+  const callAboutPage = async () => {
+    try {
+      const res = await fetch('/about', {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include'
+      });
+
+      const data = await res.json();
+      console.log(data);
+      setUserData(data);
+
+      if (!res.status === 200) {
+        throw new Error(res.error);
+      }
+
+    } catch (err) {
+      console.log(err);
+      navigate('/login');
+    }
+  };
+
+
   return (
     <>
        <div className='about bg-light'>
@@ -15,8 +52,8 @@ const About = () => {
               <div className='grid-item profile-btn-tabs'>
                 <div className='grid-container-3'>
                   <div className='grid-item'>
-                    <h5>Kushal Ghosh</h5>
-                    <h6>Software Engineer</h6>
+                    <h5>{userData.name}</h5>
+                    <h6>{userData.work}</h6>
                     <p>Profile Ranking: <span>7/10</span> </p>
                   </div>
                   <div className='grid-item edit-btn'>
@@ -67,28 +104,28 @@ const About = () => {
                         <label>Name</label>
                       </div>
                       <div className='grid-item'>
-                        <p>Kushal Ghosh</p>
+                        <p>{userData.name}</p>
                       </div>
 
                       <div className='grid-item'>  
                         <label>Email</label>
                       </div>
                       <div className='grid-item'>
-                        <p>kushalghoshk@gmail.com</p>
+                        <p>{userData.email}</p>
                       </div>
 
                       <div className='grid-item'>  
                         <label>Phone</label>
                       </div>
                       <div className='grid-item'>
-                        <p>6291294558</p>
+                        <p>{userData.phone}</p>
                       </div>
 
                       <div className='grid-item'>  
                         <label>Profession</label>
                       </div>
                       <div className='grid-item'>
-                        <p>Web Developer</p>
+                        <p>{userData.work}</p>
                       </div>
 
                     </div>

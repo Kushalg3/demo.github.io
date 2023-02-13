@@ -1,9 +1,11 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
+const authenticate = require('../middleware/authenticate');
 require('../db/conn');
 const User = require('../model/userSchema');
 const router = express.Router();
 const bcrypt = require('bcrypt');
+const app = express();
 
 router.get('/',(req,res) => {
     res.send("Hello world from the server from auth.js.");
@@ -62,7 +64,7 @@ router.post('/signin', async (req, res) => {
             const isMatch = await bcrypt.compare(password, userLogin.password);
             const token = await userLogin.generateAuthToken();
             console.log(token);
-            res.cookie("jwt_token",token,{
+            res.cookie("jwtoken",token,{
                 expires:new Date(Date.now()+25892000000),
                 httpOnly:true
                 
@@ -78,6 +80,10 @@ router.post('/signin', async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+});
+
+router.get('/about', authenticate, (req, res) => {
+    res.send(req.rootUser);
 });
 
 module.exports = router;
