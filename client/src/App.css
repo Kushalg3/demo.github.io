@@ -3,7 +3,8 @@
 }
 
 @media only screen and (max-width: 600px) {
-  div.signup-image, div.signin-image {
+  div.signup-image,
+  div.signin-image {
     display: none;
   }
 }
@@ -20,7 +21,12 @@
   pointer-events: none;
 }
 
-.signup, .signin, .contact, .home, .about, .error {
+.signup,
+.signin,
+.contact,
+.home,
+.about,
+.error {
   width: 100%;
   height: 100%;
   display: flex;
@@ -30,7 +36,7 @@
 }
 
 .home {
-  background-image: linear-gradient(to right, #cce6ff 50%,#ffffff 50%);
+  background-image: linear-gradient(to right, #cce6ff 50%, #ffffff 50%);
 }
 
 .Container {
@@ -93,7 +99,6 @@
 .contact-details-form {
   display: flex;
   justify-content: space-between;
-
 }
 
 .message-field {
@@ -197,16 +202,17 @@
   padding-left: 15px;
 }
 
-#signup-image, #signin-image {
+#signup-image,
+#signin-image {
   width: 20vw;
 }
 
-.signup-image, .signin-image {
+.signup-image,
+.signin-image {
   text-align: center;
 }
 
-#signin-image{
-  
+#signin-image {
   height: 22vw;
 }
 
@@ -255,7 +261,7 @@ input:focus {
   outline: none;
   border: 1px solid #555;
   background-color: #555;
-  color: #fff; 
+  color: #fff;
 }
 
 #profile-edit-btn:focus {
