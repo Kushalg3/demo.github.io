@@ -9,32 +9,40 @@ import Signup from "./components/Signup";
 import Logout from "./components/Logout";
 import { Route, Routes } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
+import { createContext, useReducer } from "react";
+import { reducer, initialState } from "./components/reducer";
+
+export const UserContext = createContext();
 
 const App = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
     <>
-      <div className="App">
-        <div className="navigation-bar">
-          <Navbar />
+      <UserContext.Provider value={{ state, dispatch }}>
+        <div className="App">
+          <div className="navigation-bar">
+            <Navbar />
+          </div>
+          <div className="content">
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+
+              <Route path="/about" element={<About />}></Route>
+
+              <Route path="/contact" element={<Contact />}></Route>
+
+              <Route path="/login" element={<Login />}></Route>
+
+              <Route path="/signup" element={<Signup />}></Route>
+
+              <Route path="/logout" element={<Logout />}></Route>
+
+              <Route path="*" element={<ErrorPage />}></Route>
+            </Routes>
+          </div>
         </div>
-        <div className="content">
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-
-            <Route path="/about" element={<About />}></Route>
-
-            <Route path="/contact" element={<Contact />}></Route>
-
-            <Route path="/login" element={<Login />}></Route>
-
-            <Route path="/signup" element={<Signup />}></Route>
-
-            <Route path="/logout" element={<Logout />}></Route>
-
-            <Route path="*" element={<ErrorPage />}></Route>
-          </Routes>
-        </div>
-      </div>
+      </UserContext.Provider>
     </>
   );
 };

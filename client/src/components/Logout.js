@@ -1,7 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../App";
 
 const Logout = () => {
+  // eslint-disable-next-line no-unused-vars
+  const { state, dispatch } = useContext(UserContext);
+
   const navigate = useNavigate();
   useEffect(() => {
     fetch("/logout", {
@@ -13,6 +17,8 @@ const Logout = () => {
       credentials: "include",
     })
       .then((res) => {
+        dispatch({ type: "USER", payload: false });
+
         navigate("/login", { replace: true });
         if (res.status !== 200) {
           const error = new Error(res.error);
